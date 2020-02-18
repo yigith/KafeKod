@@ -16,7 +16,13 @@ namespace KafeKod.Data
         public SiparisDurum Durum { get; set; }
         public List<SiparisDetay> SiparisDetaylar { get; set; }
 
-        public string ToplamTutarTL => string.Format("{0:0.00}₺", ToplamTutar());
+        public string ToplamTutarTL
+        {
+            get
+            {
+                return string.Format("{0:0.00}₺", ToplamTutar());
+            }
+        }
 
         public decimal ToplamTutar()
         {
