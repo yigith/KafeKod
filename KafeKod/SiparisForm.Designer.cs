@@ -58,6 +58,7 @@
             // 
             // cboUrun
             // 
+            this.cboUrun.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUrun.FormattingEnabled = true;
             this.cboUrun.Location = new System.Drawing.Point(12, 36);
             this.cboUrun.Name = "cboUrun";
@@ -68,9 +69,19 @@
             // 
             this.nudAdet.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.nudAdet.Location = new System.Drawing.Point(256, 36);
+            this.nudAdet.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudAdet.Name = "nudAdet";
             this.nudAdet.Size = new System.Drawing.Size(86, 32);
             this.nudAdet.TabIndex = 2;
+            this.nudAdet.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // btnEkle
             // 
@@ -81,15 +92,22 @@
             this.btnEkle.TabIndex = 3;
             this.btnEkle.Text = "EKLE";
             this.btnEkle.UseVisualStyleBackColor = true;
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // dgvSiparisDetaylari
             // 
+            this.dgvSiparisDetaylari.AllowUserToAddRows = false;
+            this.dgvSiparisDetaylari.AllowUserToDeleteRows = false;
             this.dgvSiparisDetaylari.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvSiparisDetaylari.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSiparisDetaylari.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvSiparisDetaylari.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSiparisDetaylari.Location = new System.Drawing.Point(12, 74);
             this.dgvSiparisDetaylari.Name = "dgvSiparisDetaylari";
+            this.dgvSiparisDetaylari.ReadOnly = true;
+            this.dgvSiparisDetaylari.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSiparisDetaylari.Size = new System.Drawing.Size(623, 431);
             this.dgvSiparisDetaylari.TabIndex = 4;
             // 
@@ -146,6 +164,7 @@
             this.btnSiparisIptal.TabIndex = 9;
             this.btnSiparisIptal.Text = "SİPARİŞ İPTAL";
             this.btnSiparisIptal.UseVisualStyleBackColor = false;
+            this.btnSiparisIptal.Click += new System.EventHandler(this.btnSiparisIptal_Click);
             // 
             // btnOdemeAl
             // 
@@ -158,6 +177,7 @@
             this.btnOdemeAl.TabIndex = 10;
             this.btnOdemeAl.Text = "ÖDEME AL";
             this.btnOdemeAl.UseVisualStyleBackColor = false;
+            this.btnOdemeAl.Click += new System.EventHandler(this.btnOdemeAl_Click);
             // 
             // btnAnasayfa
             // 
@@ -170,6 +190,7 @@
             this.btnAnasayfa.TabIndex = 11;
             this.btnAnasayfa.Text = "ANASAYFAYA DÖN";
             this.btnAnasayfa.UseVisualStyleBackColor = false;
+            this.btnAnasayfa.Click += new System.EventHandler(this.btnAnasayfa_Click);
             // 
             // lblOdemeTutari
             // 
@@ -223,7 +244,7 @@
             this.Controls.Add(this.cboUrun);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.MinimumSize = new System.Drawing.Size(775, 440);
             this.Name = "SiparisForm";
             this.Text = "Masa 0";

@@ -10,11 +10,17 @@ namespace KafeKod.Data
 
     public class Siparis
     {
+        public Siparis()
+        {
+            SiparisDetaylar = new List<SiparisDetay>();
+        }
+
         public int MasaNo { get; set; }
         public DateTime? AcilisZamani { get; set; }
         public DateTime? KapanisZamani { get; set; }
         public SiparisDurum Durum { get; set; }
         public List<SiparisDetay> SiparisDetaylar { get; set; }
+        public decimal OdenenTutar { get; set; }
 
         public string ToplamTutarTL
         {
