@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.cboUrun = new System.Windows.Forms.ComboBox();
             this.nudAdet = new System.Windows.Forms.NumericUpDown();
@@ -36,6 +37,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblMasaNo = new System.Windows.Forms.Label();
+            this.cmsSiparisDetay = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiSiparisDetaySil = new System.Windows.Forms.ToolStripMenuItem();
             this.label5 = new System.Windows.Forms.Label();
             this.btnSiparisIptal = new System.Windows.Forms.Button();
             this.btnOdemeAl = new System.Windows.Forms.Button();
@@ -45,6 +48,7 @@
             this.btnTasi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudAdet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSiparisDetaylari)).BeginInit();
+            this.cmsSiparisDetay.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -63,6 +67,7 @@
             this.cboUrun.Location = new System.Drawing.Point(12, 36);
             this.cboUrun.Name = "cboUrun";
             this.cboUrun.Size = new System.Drawing.Size(238, 32);
+            this.cboUrun.Sorted = true;
             this.cboUrun.TabIndex = 1;
             // 
             // nudAdet
@@ -110,6 +115,7 @@
             this.dgvSiparisDetaylari.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSiparisDetaylari.Size = new System.Drawing.Size(623, 431);
             this.dgvSiparisDetaylari.TabIndex = 4;
+            this.dgvSiparisDetaylari.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvSiparisDetaylari_MouseClick);
             // 
             // label2
             // 
@@ -134,6 +140,7 @@
             // 
             this.lblMasaNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMasaNo.BackColor = System.Drawing.Color.Tomato;
+            this.lblMasaNo.ContextMenuStrip = this.cmsSiparisDetay;
             this.lblMasaNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblMasaNo.ForeColor = System.Drawing.Color.White;
             this.lblMasaNo.Location = new System.Drawing.Point(641, 74);
@@ -142,6 +149,20 @@
             this.lblMasaNo.TabIndex = 7;
             this.lblMasaNo.Text = "00";
             this.lblMasaNo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cmsSiparisDetay
+            // 
+            this.cmsSiparisDetay.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiSiparisDetaySil});
+            this.cmsSiparisDetay.Name = "cmsSiparisDetay";
+            this.cmsSiparisDetay.Size = new System.Drawing.Size(87, 26);
+            // 
+            // tsmiSiparisDetaySil
+            // 
+            this.tsmiSiparisDetaySil.Name = "tsmiSiparisDetaySil";
+            this.tsmiSiparisDetaySil.Size = new System.Drawing.Size(86, 22);
+            this.tsmiSiparisDetaySil.Text = "Sil";
+            this.tsmiSiparisDetaySil.Click += new System.EventHandler(this.tsmiSiparisDetaySil_Click);
             // 
             // label5
             // 
@@ -206,6 +227,7 @@
             // cboMasaNo
             // 
             this.cboMasaNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboMasaNo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMasaNo.FormattingEnabled = true;
             this.cboMasaNo.Location = new System.Drawing.Point(711, 36);
             this.cboMasaNo.Name = "cboMasaNo";
@@ -222,6 +244,7 @@
             this.btnTasi.TabIndex = 14;
             this.btnTasi.Text = "TAŞI";
             this.btnTasi.UseVisualStyleBackColor = true;
+            this.btnTasi.Click += new System.EventHandler(this.btnTasi_Click);
             // 
             // SiparisForm
             // 
@@ -250,6 +273,7 @@
             this.Text = "Masa 0";
             ((System.ComponentModel.ISupportInitialize)(this.nudAdet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSiparisDetaylari)).EndInit();
+            this.cmsSiparisDetay.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,5 +296,7 @@
         private System.Windows.Forms.Label lblOdemeTutari;
         private System.Windows.Forms.ComboBox cboMasaNo;
         private System.Windows.Forms.Button btnTasi;
+        private System.Windows.Forms.ContextMenuStrip cmsSiparisDetay;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSiparisDetaySil;
     }
 }
