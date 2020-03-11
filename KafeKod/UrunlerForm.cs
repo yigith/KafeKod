@@ -14,14 +14,13 @@ namespace KafeKod
     public partial class UrunlerForm : Form
     {
         KafeContext db;
-        BindingList<Urun> blUrunler;
+
         public UrunlerForm(KafeContext kafeVeri)
         {
             db = kafeVeri;
             InitializeComponent();
             dgvUrunler.AutoGenerateColumns = false;
-            blUrunler = new BindingList<Urun>(db.Urunler);
-            dgvUrunler.DataSource = blUrunler;
+            dgvUrunler.DataSource = db.Urunler.OrderBy(x => x.UrunAd).ToList();
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
@@ -34,12 +33,14 @@ namespace KafeKod
                 return;
             }
 
-            blUrunler.Add(new Urun
+            db.Urunler.Add(new Urun
             {
                 UrunAd = urunAd,
                 BirimFiyat = nudBirimFiyat.Value
             });
-            db.Urunler.Sort();
+            db.SaveChanges();
+
+            dgvUrunler.DataSource = db.Urunler.OrderBy(x => x.UrunAd).ToList();
         }
 
         // https://docs.microsoft.com/en-us/dotnet/framework/winforms/controls/handling-errors-that-occur-during-data-entry-in-the-datagrid#creating-the-form
@@ -61,6 +62,7 @@ namespace KafeKod
                 else
                 {
                     dgvUrunler.Rows[e.RowIndex].ErrorText = "";
+                    db.SaveChanges();
                 }
             }
         }

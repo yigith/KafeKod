@@ -12,6 +12,11 @@ namespace KafeKod.Data
     [Table("Siparisler")]
     public class Siparis
     {
+        public Siparis()
+        {
+            SiparisDetaylar = new List<SiparisDetay>();
+        }
+
         public int Id { get; set; }
 
         public int MasaNo { get; set; }
