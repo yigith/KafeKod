@@ -8,15 +8,22 @@ using System.Threading.Tasks;
 
 namespace KafeKod.Data
 {
-    [Table("Urunler")]
+   [Table("Urunler")]
     public class Urun
     {
+        public Urun()
+        {
+            SiparisDetaylar = new List<SiparisDetay>();
+        }
+
         public int Id { get; set; }
 
         [Required, MaxLength(50)]
         public string UrunAd { get; set; }
 
         public decimal BirimFiyat { get; set; }
+
+        public bool StoktaYok { get; set; }
 
 
         public virtual List<SiparisDetay> SiparisDetaylar { get; set; }

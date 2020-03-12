@@ -32,6 +32,7 @@
             this.tsmiUrunler = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiGecmisSiparisler = new System.Windows.Forms.ToolStripMenuItem();
             this.lvwMasalar = new System.Windows.Forms.ListView();
+            this.tsmiAyarlar = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -39,7 +40,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiUrunler,
-            this.tsmiGecmisSiparisler});
+            this.tsmiGecmisSiparisler,
+            this.tsmiAyarlar});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -70,6 +72,13 @@
             this.lvwMasalar.UseCompatibleStateImageBehavior = false;
             this.lvwMasalar.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvwMasalar_MouseDoubleClick);
             // 
+            // tsmiAyarlar
+            // 
+            this.tsmiAyarlar.Name = "tsmiAyarlar";
+            this.tsmiAyarlar.Size = new System.Drawing.Size(56, 20);
+            this.tsmiAyarlar.Text = "Ayarlar";
+            this.tsmiAyarlar.Click += new System.EventHandler(this.tsmiAyarlar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -94,6 +103,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiUrunler;
         private System.Windows.Forms.ToolStripMenuItem tsmiGecmisSiparisler;
         private System.Windows.Forms.ListView lvwMasalar;
+        private System.Windows.Forms.ToolStripMenuItem tsmiAyarlar;
     }
 }
 
